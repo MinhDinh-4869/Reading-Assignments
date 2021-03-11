@@ -1,0 +1,23 @@
+Chapter 10: Array
+-Sequence of objects of sametype.
+-Array declaration: data_type array_name[size (or number of maximum elements)];
+                    data_type array_name[size(optional)] = {elements (separated by ',')};
+-To access an element in array: array_name[index]
+-Index is counted from 0
+
+Chapter 11: Pointer
+-Pointer is a variable that stores other variables' address on memory.
+-A pointer can only point to a variable of the same type.
+-Pointer declaration: data_type* ptr_name;
+-Assigning value to pointer: ptr_name = &variable_name;
+                             ptr_name = array_name; >> The pointer will take the address of the first element in array.
+-As pointer stores variable's address, we can change one's value through pointer: int a = 1; int* ptr; ptr = &a; *ptr = 5; --> a = 5
+
+Chapter 12: References
+-Somewhat similar to pointer: also change one variable's value by accessing its address.
+-When using reference, both reference and variable's value will be changed even the value of reference or variable is changed.
+-Syntax: int x;
+         int& y = x;
+
+Chapter 13: Introduction to String
+
