@@ -20,4 +20,19 @@ Chapter 12: References
          int& y = x;
 
 Chapter 13: Introduction to String
+-Define a string: require <string> header
+-Syntax: std::string string_name = "string_content";
+-concatenating Strings: using "+=" or "+" operator.
+-String is so-called class-template, which is implemented using templates.
+-Accessing string's character: string_name.at(index) or string_name[index]
+-Comparing string: using "==" operator.
+-Input a string: using str::getline(), which takes std::cin and string itself as parameter: std::getline(std::cin, string_name);
+-getline() can takes white space, while cin can not.
+-Function .c_str() returns a pointer to string's first element.
+-Substring, which is a part of a string, can be created by using string_name.substr(start_positiion, length);
+-To find a substring, .find() can be used: string_name.find(substring_name)
+-.find() function will return first found position of substring, of type std::string::size_type, and returns std::string::npos if the substring is not found.
+
+Chapter 14: Automatic Type Deduction
+-"auto" is a data type of all types.
 
