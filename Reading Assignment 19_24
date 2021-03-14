@@ -1,0 +1,39 @@
+Chapter 19: Function
+-Is a small chunk of codes which can be called in main() for particular purpose.
+-A function can basically returns a value or not, and "returns" arrays with extra steps. 
+-Function basic definition:  type function_name(type(s) parameter(s) (or argument(s))){statements; return something;}
+-The type of function is basically type of data that the function returns, however, there are some exceptions:
+  -- type "void": The function returns nothing, that "void" mean "no data type"
+  -- using a pointer to directly "returns" value to address of parameters
+-A function must be declared before the main() function, so that it is available to be used in main()
+-A function can be defined whether before main() or after, but the declaration step must be done before main()
+-To call a function in main(), we use this syntax: function_name(parameter(s));
+-Passing arguments:3 ways
+  --1.By value/copy: this is a basic one, a copy of value of the variable(s) will be passed to the function, the original variable(s) do/does not change in value(s)
+  --2.1.By Reference: When a function takes a reference as argument, it actually change the value of the referenced variable.
+    --- E.g: #include <iostream>
+             using namespace std;
+             void someFuncName(int& myRef)
+             { myRef = 0;}
+             int main()
+             {
+              int someNum = 10; //value of someNum = 10;
+              someFuncName(someNum);
+              cout << someNum; // print out value of someNum --> =0
+              return 0;
+              }
+  --2.2.(Extra) By Pointer: similar to previous way, but there are some minor changes:
+    ---Eg   #include <iostream>
+             using namespace std;
+             void someFuncName(int* myPtr) //<--Change here
+             { *myPtr = 0;}//<-- Change here
+             int main()
+             {
+              int someNum = 10; //value of someNum = 10;
+              someFuncName(&someNum);//<-- Change here
+              cout << someNum; // print out value of someNum --> =0
+              return 0;
+              }
+  --3.By const reference: Just like by reference, but to ensure the reference can not be changed.
+    ---Syntax: type (usually "void") funcName(const type& constRefName)
+          
