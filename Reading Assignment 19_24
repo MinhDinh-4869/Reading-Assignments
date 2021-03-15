@@ -36,4 +36,6 @@ Chapter 19: Function
               }
   --3.By const reference: Just like by reference, but to ensure the reference can not be changed.
     ---Syntax: type (usually "void") funcName(const type& constRefName)
-          
+-We can define functions with the same name buts different parameters, this is called function overloading.
+Chapter 21: Scope and Lifetime
+-A variable's name is valid in a section of the source code. That section is called scope.
