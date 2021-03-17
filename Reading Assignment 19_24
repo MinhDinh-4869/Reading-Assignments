@@ -39,3 +39,108 @@ Chapter 19: Function
 -We can define functions with the same name buts different parameters, this is called function overloading.
 Chapter 21: Scope and Lifetime
 -A variable's name is valid in a section of the source code. That section is called scope.
+-Lifetime (of an object) is the time that an object spends in memory or so-called storage duration.
+-Types:
+  --Automatic Storage Duration (Stack memory): Start: the beginning of a block
+                                End:   when the code block ends
+  --Dynamic Storage Duration (Heap memory): A duration for an object is manually allocated and manually deallocated.
+  --Static Storage Duration: object prepended with a static specifier --> the storage is allocated when the program starts and deallocate when the program ends.
+-Operators new and delete: "new" allocates new space of memory for an object and "delete" removes it.
+  --e.g: int* p = new int; //allocate a memory space for a int value, like malloc() in C
+         *p = 123; //assign value to that space
+         delete p; //remove the space, like free() in C
+-For array, use new type[size] and delete[] ptr;
+Chapter 23: Classes
+-Class is not a basic data type. It is user-defined
+-A class has members, including data members and member functions.
+-Class declaration and definition: 
+  --Declaration: Simply put class className; before main()
+  --Definition: add {} after name: class className{};
+-Object: is an instance of a class, syntax to create an object from a class: className objName;
+-Member Functions: a class can carry functions, there are 2 ways to define this type of function:
+  --Inside class definition
+    ---e.g: class className{
+                void funcName(){statements;}
+                };
+  --Outside class definition
+    ---e.g: class className {
+                void funcName();//declareation inside class
+                };
+            void className::funcName(){statements};
+            
+-Access Specifier: public, protected and private
+  --e.g: class className{
+              
+              public:
+                //Everything goes here
+                //has Public access lever
+              protected:
+                //
+                //    Protected
+              private:
+                //
+                //    Private
+         };
+-Struct == Class with everything is at public access level by default
+-Everything which is at public access level can be changed its value in main()
+-Everything which is at private access level can NOT be changed its value in main(), that mean their vlue is local to their class.
+-Protected access level: go to Inheritance part
+
+-Constructor: has the same name as the class, which takes responsibility for initializing object. There are types of constructor:
+  --Default constructor: a constructor w/o parameters or w/ default parameters
+  --This type of constructor can be called w/o arguments
+  --e.g: class className
+          {
+            public:
+            className(){statements;} //a non-argument constuctor
+           };
+         class className
+          {
+            public:
+            className(type arg1=val1, type arg2=val2....){statements;} //a default-argument constuctor
+           } ;
+  --User-provided constructor: takes arrguments when initializing objects
+  --e.g: class className
+            {
+            public:
+            int x,y;
+            className(int xx, int yy)
+            {
+            x = xx;
+            y = yy;
+            }
+            };
+            then in main():
+            className objName(1,2);
+            -->objName.x = 1, objName.y = 2
+-Member Initialization: like previous e.g, but with extra steps and better:
+  --e.g:  class className
+            {
+            public:
+            int x,y;
+            className(int xx, int yy):x{xx},y{yy}
+            {}
+            };
+-When we intialize an object with existing object of the same class, we invoke a copy instructor:
+  --e.g: className obj1(1,2);
+         className obj2 = obj1; //create a obj2 w/o constructor but by using a copy constructor from obj1
+-However, we can create our very own copy constructor by the format className(const className& rhs):
+  --e.g: class MyClass
+          {
+          private:
+          int x, y;
+          public:
+          MyClass(int xx, int yy) : x{ xx }, y{ yy }
+          {
+          }
+          // user defined copy constructor
+          MyClass(const MyClass& rhs): x{ rhs.x }, y{ rhs.y }
+          {}
+          };
+-Operator Overloading: In order to provide a meaningful operation on object of a class
+  --syntax: className& operator__():
+-When we need to perform arithmetic, logic, and other operations on our objects of
+a class, we need to overload the appropriate operators.
+-Destructor is a member function that gets invoked when an
+object is destroyed, usually when an object goes out of its scope.
+          
