@@ -1,0 +1,73 @@
+Chapter 25: Inheritance and Polymorphism
+-Inheritance: We can build a class by deriving from a base class, which can access everthing in public and protected access level of the base class.
+  --Syntax: class DerivedClass : public baseClass{};
+  --Protected and Private:
+    -- class baseClass
+        {
+          private:
+          /*properties;*/
+        };
+        class derivedClass : public baseClass
+        {
+          /*Properties are not accessible here*/
+        };
+        int main()
+        {
+          /*properties are not accessible here*/
+        }
+        
+    -- class baseClass
+        {
+          protected:
+          /*properties;*/
+        };
+        class derivedClass : public baseClass
+        {
+          /*Properties are accessible here*/
+        };
+        int main()
+        {
+          /*properties are not accessible here*/
+        }
+-Hierachy: when derived a class from a base class, it will include everything from the base class, and further include its own properties, wich can also be inherited when a
+new class is derived base on it.
+-Polimorphism: as be derived from a base class, a pointer to a base class is also compatible with a pointer to a derived class.
+-This means a pointer points to a base class can points/ takes address of a derived class, then it can access appropriate version of a function, which name is reused in the derived
+class.
+-The function in the base class should be defined with "virtual" specifier, which points out that the function with virtual specifier can be overidden/redefined in the derived classes.
+-In polimorphism, a pointer is used to access functions.
+
+--e.g:
+    --- class baseClass
+    {
+    public:
+    virtual void dowork()
+    {
+    cout << "This message is from base class"; 
+    }
+     };
+     class derivedClass : public baseClass
+     {
+     public:
+     void dowork() //redefind the function dowork() in the derived class
+     {
+     cout << "This message is from the derived class";
+     }
+      };
+      
+      int main()
+      {
+        baseClass* o = new derivedClass; // create a pointer of class baseClass and points to an object of class derivedClass created by new
+        o->dowork();//call the function dowork() in derived class
+        delete o;
+      }
+-If there is not dowork() function in the derived class, the function in the base class will be invoked.
+-Function can be pure virtual by specifying =0 after declaration. Pure virtual function does not have declaration and must be redefined in derived classes.
+-Pure virtual function also be called Interface and class have at least 1 pure virtual func can be called as Abstract class and can not instantiated (or make instances or make objects)
+-A base class should have a destructor beside interface: 
+  --e.g: 
+     --- class baseClass
+     {
+     virtual void function name() = 0;
+     virtual ~baseClass{};
+      };
