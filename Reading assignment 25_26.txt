@@ -71,3 +71,9 @@ class.
      virtual void function name() = 0;
      virtual ~baseClass{};
       };
+-To use vector, header <vector> must be included
+-To run a code using vector, -std=c++11 must be called.
+-To declare a vector: vector<some_type> vec_name ( = {elements});
+-To access an element in vector,  using vector_name[index] or vector_name.at<index>
+-To add a new element to the end of a vector, using vector_name.push_back(element)
+-Vector a.k.a Dynamic Array!!!
