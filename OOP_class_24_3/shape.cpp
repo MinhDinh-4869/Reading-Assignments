@@ -1,4 +1,5 @@
 //THis programm requires -std=c++11 to run perfectly.
+//No update() function included.
 #include <iostream>
 #include <cmath>
 
