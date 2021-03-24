@@ -134,6 +134,4 @@ int main()
 	cout <<o->computeDIS(b);
 	delete o;
 	delete b;
-
-
 }
