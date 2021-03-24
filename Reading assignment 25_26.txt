@@ -71,6 +71,7 @@ class.
      virtual void function name() = 0;
      virtual ~baseClass{};
       };
+Chapter 38 - Vector
 -To use vector, header <vector> must be included
 -To run a code using vector, -std=c++11 must be called.
 -To declare a vector: vector<some_type> vec_name ( = {elements});
