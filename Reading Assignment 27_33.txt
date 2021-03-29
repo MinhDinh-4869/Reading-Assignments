@@ -19,8 +19,8 @@ Chapter 27: The static specifier
     int main()
     {
 	  MyClass a;
-	  a.Hello();
-	  a.Hello();
-	  a.Hello();
+	  a.Hello();//x=1
+	  a.Hello();//x=2
+	  a.Hello();//x=3
 	  return 0;
     }
