@@ -24,3 +24,11 @@ Chapter 27: The static specifier
 	  a.Hello();//x=3
 	  return 0;
     }
+Chapter 28: Template
+-A mechanism that supports generic programming --> create a function or class that we dont have to consider what types of the parameters are.
+-Syntax: template<typename T>
+	//function definition goes here
+	//e.g: void FuncName(T param)
+	{
+	cout << "THe value of parameter is: << param;//parameter is of type T
+	}
