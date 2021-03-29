@@ -1,0 +1,26 @@
+Chapter 27: The static specifier
+-The static specifier sáy the object with that spec has a static storage duration.
+-The memory space for a static object is allocated when the program begins and deallocated when the program ends.*
+-The value stored in a static object will not disappear when the function that holds it is recalled
+-Only one instance of a static object can be exist in program.
+  --e.g:
+    #include <iostream>
+     using namespace std;
+     class MyClass
+     {
+      public:
+	    void Hello()
+	    {
+		    static int x = 0;
+		    x++;
+		    cout <<x <<endl;
+	    }
+     };
+    int main()
+    {
+	  MyClass a;
+	  a.Hello();
+	  a.Hello();
+	  a.Hello();
+	  return 0;
+    }
