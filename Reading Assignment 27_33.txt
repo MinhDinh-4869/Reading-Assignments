@@ -32,3 +32,56 @@ Chapter 28: Template
 	{
 	cout << "THe value of parameter is: << param;//parameter is of type T
 	}
+	int main()
+	{
+	FuncName<int>(40);//print out 40
+	}
+-typename T: T can be consider as a placeholder of a specific data type, which can be replaced when the function is called.
+-Template can have more than 1 parameter: template<typename T, typename U, typename ....>
+					  void Function(T t, U u)
+-Template can be used for class:
+	#include <iostream>
+	using namespace std;
+	template<typename T>
+	class MyClass
+	{
+	private:
+	T x;
+	public:
+	MyClass(T x)
+	{
+	this->x = x;
+	}
+	void getX()
+	{
+	cout << this->x<<endl;
+	}
+	};
+	int main()
+	{
+	MyClass<int> o(100);
+	o.getX();
+	}
+-A function can be specialized as an exception using template<> type funcName(data_type(int, double,...)){codes go here}
+	--This type of function will be called when the argument is matched with the type of paramenter of the function.
+	--e.g:#include <iostream>
+		using namespace std;
+
+		template<typename T>
+		void myfunction(T arg)
+		{
+		std::cout << "The value of an argument is: " << arg << '\n';
+		}
+		template <>
+		// the rest of our code
+		void myfunction(int arg)
+		{
+		std::cout << "This is a specialization int. The value is: " << arg <<
+		'\n';
+		}
+		int main()
+		{
+		myfunction<char>('A');//invokes non_specialization
+		myfunction<double>(345.678);
+		myfunction<int>(123); // invokes specialization b'cause argument is int.
+		}
