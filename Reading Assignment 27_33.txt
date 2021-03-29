@@ -85,3 +85,31 @@ Chapter 28: Template
 		myfunction<double>(345.678);
 		myfunction<int>(123); // invokes specialization b'cause argument is int.
 		}
+Chapter 29: Enumerators
+-A way to define constants
+-There are 2 types: unscoped and scoped.
+	--eg:1.
+		enum MyEnum
+		{
+		myfirstvalue=9,
+		mysecondvalue,
+		mythirdvalue
+		};
+		int main()
+		{
+		MyEnum myenum = mysecondvalue;
+		cout << myenum;
+		}
+		
+		
+	    2.
+		enum class MyEnum											
+		{
+		myfirstvalue,
+		mysecondvalue,
+		mythirdvalue
+		};
+		int main()
+		{
+		MyEnum myenum = MyEnum::myfirstvalue;
+		}
