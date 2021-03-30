@@ -113,3 +113,15 @@ Chapter 29: Enumerators
 		{
 		MyEnum myenum = MyEnum::myfirstvalue;
 		}
+Chapter 31: Organizing Code
+-Header and Source files:
+	-Header files are files where we can put various declaration. End with .h or .hpp
+	-Source files are files where we store our codes in. End with .c or .cpp
+-To use a standard library header, <header_name> is used, "header_name.h" is used for user defined header.
+-We should put declarations and constants into header files and executable code in source files.
+-Namespace: Namespace is a scope with a name.
+- TO declare a namespace: 
+	-namespace NAME_SPACE_NAME
+	{// codes goes here!}
+-To access an elements in a namespace: NAME_SPACE_NAME::VAR_NAME;
+-We avoid using :: by: using namespace NAME_SPACE_NAME;
