@@ -125,3 +125,12 @@ Chapter 31: Organizing Code
 	{// codes goes here!}
 -To access an elements in a namespace: NAME_SPACE_NAME::VAR_NAME;
 -We avoid using :: by: using namespace NAME_SPACE_NAME;
+Chapter 33: Conversion
+-Built-in data type can be converted to another built-in data type: double-> int (without the decimal part).
+-A pointer of anytype can be conversed into void type.
+-We can also cast a void pointer to a pointer of a basic data type by:
+	-using static_cast<data_type*>
+	-using (data_type*)
+-dynamic_cast<class_name*>(object) can be used to cast pointers of objects which are in inheritent chain.
+-To use dynamic_cast<>, the chian should be polymorphic, which mean there is at least one virtual in base class.
+-dynamic_cast will be failed for unrelated classes.
