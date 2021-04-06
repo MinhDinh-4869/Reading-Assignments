@@ -1,0 +1,11 @@
+-4 principles of OOP:
+  --Encapsulation
+  --Abstraction
+  --Inheritance
+  --Polymorphism
+-Encapsulation:
+  --Objects have states, which are PRIVATE and can not be changed externally.
+  --Though we can not change the states, we can affect them by the public methods.
+  --E.g: -A cat class has its private states: hungry, mood and energy and private method meow() which will be called whenever it wants
+         -We can not change the states of the cats, for example, decide when the cat is hungry, it is private.
+         -But we can communicate with its states by public methods like feed() or play(), which provide a link to the states.
