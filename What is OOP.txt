@@ -1,0 +1,24 @@
+-What is OOP??
+  --OOP is a programming paradigm where everything is based on classes and objects.
+  --Class is a blueprint, which is used to create objects.
+  --Objects has States and Methods:
+    ---States are the properties of an object
+    ---Methods are the functions, which can be used to interact with objects' states
+-Benefits of OOP:
+  --OOP models complex things as reproducible, simple structures
+  --Reusable, OOP objects can be used across programs
+  --Allows for class-specific behavior through polymorphism
+  --Easier to debug, classes often contain all applicable information to them
+  --Secure, protects information through encapsulation
+-How to structure OOP programs:
+  --Create a parent class
+  --Create a child class
+  --Add unique states and behaviours
+  --Create objects from a child class
+-Building blocks of OOP:
+  --Classes:are essentially user-defined data types, where we can create a template for structure of attributes and methods
+  --Objects: are instances created with specific data
+  --Attributes: are the information that is stored, defined in the class template, when objects are
+  instaniated individual objects contain data stored in the Attributes field.
+  --Methods: represent behaviors, perform actions, return information about an object of update an object's data. Defined
+  in the class definition.
