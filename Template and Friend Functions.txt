@@ -3,11 +3,29 @@ A method for creating typename that is used for all types and we just have to sp
 syntax: template <typename T>
         template <class T>
 when we declare an object of class T, we have to specify it to be in used: class_name<class_type> obj_name;
-Friend functions:
-Functions that are able to access all the protected and private properties of a class
-Friend function must be declared inside the class and defined outside
-Syntax: declaration: friend return_type function_name(class_name);
+
+Friend functions and classes:
+-Functions that are able to access all the protected and private properties of a class
+-Friend function must be declared inside the class and defined outside
+-Syntax: declaration: friend return_type function_name(class_name);
         definition: return_type function_name(class_name object_name)
         {
         //return some properties.
         }
+
+-Classes that are able to access all the protected and private properties of a class
+-Syntax: friend class class_name; :declaration
+         class class_name{
+         type function_name (original_class obj)
+         {
+         //codes
+                }
+         };
+
+Binding: refers to the process that is used to convert identifiers (such as variable and function names) into addresses
+Early Binding or static binding:
+-Direct function call: The compiler will directly link to the address of the identifiers. When the compiler (or linker) encounters a function call, it replaces the function call with a machine language instruction that tells the CPU to jump to the address of the function.
+
+Late Binding or dynamic binding: 
+-Indirect function call: Using a pointer to point to address of a function rather than call it directly.
+     
