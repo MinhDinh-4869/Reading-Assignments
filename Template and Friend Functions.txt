@@ -1,0 +1,13 @@
+Temmplate:
+A method for creating typename that is used for all types and we just have to specify the data type we want when we use the code.
+syntax: template <typename T>
+        template <class T>
+when we declare an object of class T, we have to specify it to be in used: class_name<class_type> obj_name;
+Friend functions:
+Functions that are able to access all the protected and private properties of a class
+Friend function must be declared inside the class and defined outside
+Syntax: declaration: friend return_type function_name(class_name);
+        definition: return_type function_name(class_name object_name)
+        {
+        //return some properties.
+        }
