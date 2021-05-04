@@ -1,0 +1,39 @@
+1. Function Overloading
+-Different functions with same name but different parameters.
+-E.g: 
+  -- void print(int d){
+      cout << d << endl}
+     void print(double f){
+      cout << f << endl}
+     void print(double f){
+      cout << f << endl}
+2. Operator Overloading
+-Class is a user-defined datatype, then we can not use the built-in operators for this data type.
+-To define an operator for working with classes, a methodology called "Operator Overloading" is used, that we redefine the exist operators for using with classed purpose.
+- We use the keyword "operator" to overload operator
+-Syntax: return_type operator operator_to_overload(parameters list){}
+
+  2.a Unary Operator Overloading
+  -Increment and Decrement: Prefix and Postfix syntax:
+    -- Prefix: return_type operator++ or -- (){}
+      -- if the return type is a reference, we have to return *this, if it is an object, he have to create an object to store the result in the code.
+    -- Postfix: return_type operator++ or -- ( int ){}
+      -- In Postfix, we have to create a copy of the current object, then change the value, but return the original one. This is to make sure that the value used during the process 
+      is the original but after that the value will be changed.
+  2.b Binary Operator Overloading: +,-,*,/
+    -- We can overload based on +=,.... or overload directly.
+    -- For directly overloading, we have to create an object in side the overloading scope and work on its properties.
+  2.c Relational Operator Overloading >,<,=,....
+    --Usually, the return type is "bool"
+  2.d Input/Output Operator Overloading: <<
+    --A methodology for making object from standard input and return the object by >>, <<
+    --ostream, istream and friend function is used.
+  2.e Assignment Operator Overloading: =
+    --We also can overload the operator "=" just like a copy constructor.
+    -- This type of overloading does not return an object, so the data type is "void", while the this->properties is assigned directly from a referent object.
+  2.f Function call () Operator Overloading: ()
+    --When we overload this operator, we are not overloading a way to call a function but creating a method for passing an arbitrary number of parameters
+  2.g Subscripting [] Operator Overloading:
+    --The subscript operator [] is normally used to access array elements. This operator can be overloaded to enhance the existing functionality of C++ arrays.
+  2.h Class Member Access Operator ->
+    --It is like the class member access operator, pointer, (->). It is not essential to build this operator overloading to function
