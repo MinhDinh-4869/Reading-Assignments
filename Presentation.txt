@@ -1,0 +1,74 @@
+1. Constructor, Destructor and Object Copying
+	-Constructor is a special method which is used for creating instances.
+	-Class can have more than 1 constructor, but only one constructor is called when an instance is created.
+	-Destructor is a method designed for removing object when the program is terminated. Destructor is defined as: ~Class_name(){}
+
+	-Object copying:
+		--We can overload the assignment operator "=" or create a copy constructor by your own or use the default copy constructor (not recommended).
+		--When working with classes which have pointer in properties, a copy constructor must be defined because if no, the address that the pointer is pointing to will be used by both the copying and copied instance, then when we change one instance the remaining will be changed too.
+
+2. Naming convention and getter/setter method
+	-Naming Convention is a procedure to name the classes, variables and so on.
+		--1. Class name: 
+			---Uper case letter for word separators.
+			---Lower case letter for the rest of the word.
+			---First character should be uppercase
+			---Underscores "_" are not permitted.
+		--2. Method and Function Names:
+			---Method and Function names should start with a verb.
+			---Prefixes and Suffixes are useful
+			---Use the same rule for class name.
+		--3. No all uppercase abbreviations:
+			---Abbreviations should be written uppercase for the first letter and the remaining should be lowercase.
+		--4. Pointer Variables:
+			---Pointer name should be prepended by a "p"
+			---"*" should be placed close to the name, not the data type of the pointer
+		--5. Method argument names:
+			---First character should be lowercase
+			---All words beginning after the first letter should be uppercase as with class names
+		--6. Global Constants and Static Variables
+			---Global constants should be all caps (uppercase letter) with "_" separators.
+			--Static Variables should be prepended with "s"
+	-Getter/Setter method: designed for interact with the private member (for Encapsulation purpose).
+
+3. Upcast and Downcast
+	-Casting: coverting from one data type to another data type
+	-Upcast: casting Child -> Parent
+		--Upcasting is quite implicit, because the Child class contains more data than Parent class, then the data in Parent can be access through Child class.
+	-Downcast: casting Parent -> Child
+		--Different from upcast, class Parent doesnt have as much info as Child does, so downcasting is confusing/
+		--To downcast, we have to create a pointer of Child class, then use dynamic_cast to convert the pointer of Parent class to the Child class, if the process is successful, it will return a pointer and this pointer will be assigned to the Child class pointer that we have created previously:
+			---- Child* a_child = dynamic_cast<Child*>(p) where p is a pointer of Parent class.
+
+4. Void keyword
+	-Void as a function return type:
+		--The void keyword is to indicate that the function does not return any value.
+	-Void as a function parameter:
+		--The void is put inside the brackets () to indicate that the function takes no parameter.
+	-Void as a pointer declaration:
+		--a void pointer means this pointer is universal, that mean it can take address of variables of any type
+		--However, we can not access the value using this pointer. We have to use static_cast to convert a void pointer to a pointer of data type of value that the variable is storing.
+
+5. Template
+
+6. Const keyword
+	"Const is a promise to C++ that you won't change that variable ever again"- Huynh Minh Triet, 2021-2077
+	- Syntax: const data_type var_name = value;
+	-Const with pointer: we have 2 ways to use const with pointer:
+		--Const appears before the *:
+			---e.g: const int *x = new int;
+			--- This is to indicate that the *x is constant, that mean we can not change the value at the address that x is storing, but direct change using the original variable is permitted.
+		
+		--Const appears after the *:
+			---e.g *const x = new int;
+			---This is to indicate that the x is a constant, that mean the value of x or the address can not be changed anymore.
+	-Const with class:
+		--Const with get() function: dat_type get() const{}
+			--- The const is to indicate that the function is able to return only, and it can not change the value of members inside it.
+		--Const with methods:
+			--- The + overloading: blabla (const class_name& obj) const {}
+			--- The const is to promise not to change who is calling the operator, just read only, this case is *this.
+	-Const function only with const function
+		--const function accepts const function only and refuse all other non-const functions.
+	-The "mutable" keyword:
+		--This keyword is to indicate that the variable is mutable, which means its value can be changed inside a const function.
